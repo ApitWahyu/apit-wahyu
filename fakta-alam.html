@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Mengungkap Fakta Alam Secara Objektif</title>
+<style>
+:root{--g:#22c55e;--gd:#15803d;--o:#f97316;--od:#c2410c;--b:#0ea5e9;--bd:#0369a1;--ink:#14532d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{height:100%}
+body{margin:0;min-height:100%;font-family:"Baloo 2","Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:linear-gradient(#bae6fd 0,#dcfce7 55%,#86efac 100%) fixed;overflow-x:hidden}
+.lf{position:fixed;top:-10vh;font-size:28px;animation:fall linear infinite;pointer-events:none;z-index:0}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
+@keyframes bob{50%{transform:translateY(-14px) rotate(4deg)}}
+@keyframes pop{from{transform:scale(.8);opacity:0}}
+main{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:18px}
+.c{background:#fff;border-radius:28px;padding:24px;box-shadow:0 8px 0 #bbf7d0,0 18px 30px #14532d33;border:3px solid #fff;animation:pop .4s}
+h1{font-size:clamp(30px,7vw,56px);margin:.2em 0;line-height:1.05;color:#16a34a;text-shadow:0 2px 0 #fff,0 4px 0 #15803d,0 7px 0 #14532d55}
+h2{margin:.2em 0;color:var(--gd);text-shadow:0 2px 0 #dcfce7}
+.hero{text-align:center}.big{font-size:110px;animation:bob 3s infinite;filter:drop-shadow(0 12px 6px #0003)}
+.btn{font:inherit;font-weight:800;font-size:18px;color:#fff;background:var(--g);border:0;border-bottom:6px solid var(--gd);border-radius:20px;padding:10px 22px;margin:6px;cursor:pointer;transition:.1s;box-shadow:0 6px 10px #0002}
+.btn:hover{transform:translateY(-3px)}.btn:active{transform:translateY(4px);border-bottom-width:2px}
+.b2{background:var(--o);border-color:var(--od)}.b3{background:var(--b);border-color:var(--bd)}.btn[disabled]{opacity:.45}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:14px 0}
+.sq{aspect-ratio:1;border:0;border-radius:26px;color:#fff;font:inherit;font-weight:800;font-size:20px;cursor:pointer;border-bottom:8px solid #0004;box-shadow:0 10px 16px #0003;transition:.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.sq:hover{transform:translateY(-6px) rotate(-2deg) scale(1.04)}.sq i{font-size:56px;font-style:normal}.sq.on{outline:5px solid #fde047}
+.tp{border-left:10px solid var(--g);background:#f0fdf4;border-radius:16px;padding:10px 14px;margin:10px 0;animation:pop .5s}
+.pn{background:#ecfccb;border-radius:20px;padding:14px;margin:12px 0}
+.fl{perspective:700px;height:150px}.fl>div{position:relative;height:100%;transition:.6s;transform-style:preserve-3d;cursor:pointer}.fl.on>div{transform:rotateY(180deg)}
+.fl b,.fl span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;border-radius:20px;backface-visibility:hidden;font-size:15px}
+.fl b{background:var(--o);color:#fff;font-size:20px}.fl span{background:#fef3c7;transform:rotateY(180deg);font-weight:600}
+.vc{border-radius:20px;padding:14px;color:#fff;font-weight:600;box-shadow:0 6px 0 #0003}.vc i{font-size:42px;display:block;font-style:normal}
+.eq{display:flex;gap:6px;height:50px;align-items:flex-end;justify-content:center}.eq s{width:10px;background:var(--b);border-radius:6px;animation:eq 1s infinite alternate}
+@keyframes eq{from{height:8px}to{height:48px}}
+input,select{font:inherit;width:100%;padding:12px;border-radius:14px;border:3px solid #86efac;margin:6px 0 12px;font-size:17px}
+.q{font-size:clamp(20px,4vw,28px);font-weight:700;text-align:center;background:#fefce8;border:4px dashed #facc15;border-radius:24px;padding:26px;margin:14px 0;min-height:120px;display:flex;align-items:center;justify-content:center}
+.two{display:flex;gap:14px}.two .btn{flex:1;font-size:26px;padding:22px 10px;border-radius:26px}
+.bar{height:16px;background:#dcfce7;border-radius:10px;overflow:hidden}.bar div{height:100%;background:linear-gradient(90deg,#4ade80,#16a34a);transition:.4s}
+.ok{background:#dcfce7;color:#166534}.no{background:#fee2e2;color:#991b1b}.fb{border-radius:16px;padding:10px 14px;margin:10px 0;font-weight:700;animation:pop .3s}
+.env{font-size:46px;border-radius:20px;height:120px;border:0;border-bottom:8px solid #0004;color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 8px 14px #0003}.env:disabled{opacity:.35;cursor:not-allowed}.env span{font-size:44px;display:block}
+.slot,.pc{border-radius:16px;padding:12px;margin:8px 0;font-weight:600;min-height:60px}
+.slot{border:3px dashed #86efac;background:#f7fee7;cursor:pointer}.slot.bad{border-color:#ef4444;background:#fee2e2;animation:sh .3s}.slot.good{border-style:solid;background:#dcfce7}
+.pc{background:#fff;border:3px solid var(--b);cursor:pointer;box-shadow:0 5px 0 var(--bd)}.pc:hover{transform:translateY(-2px)}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid #bbf7d0;text-align:left}th{background:#dcfce7}.sc{overflow-x:auto}
+small{opacity:.75}
+</style></head><body>
+<main id="app"></main>
+<script>
+const P=[
+["Jahe","🍠",`Rimpang jahe berwarna kekuningan dan beraroma tajam.|F
+Rasa jahe pedas dan menghangatkan tubuh.|F
+Daun jahe berbentuk lanset dan tersusun berselang-seling.|F
+Jahe tumbuh di dalam tanah berupa rimpang.|F
+Jahe sering diseduh menjadi wedang.|F
+Tinggi tanaman jahe berkisar 40–100 cm.|D
+Jahe umumnya dipanen pada umur 8–10 bulan.|D
+Jahe tumbuh baik pada suhu 20–35°C.|D
+Satu rimpang jahe sedang berbobot sekitar 150 gram.|D
+Hasil panen jahe mencapai 15–25 ton per hektare.|D`,
+["Jahe, Si Rimpang Penghangat","Jahe (Zingiber officinale) adalah tanaman rempah dari keluarga Zingiberaceae.","Rimpang jahe berwarna kekuningan, beraroma tajam, dan berasa pedas. Daunnya lanset dan tingginya 40–100 cm.","Jahe bermanfaat sebagai bumbu dan bahan minuman penghangat tubuh."]],
+["Kelor","🌿",`Daun kelor kecil, bulat telur, dan tersusun majemuk.|F
+Batang kelor berkayu dan mudah patah.|F
+Bunga kelor berwarna putih krem.|F
+Buah kelor berbentuk panjang seperti polong.|F
+Daun kelor biasa dimasak menjadi sayur bening.|F
+Pohon kelor dapat mencapai tinggi 7–12 meter.|D
+Panjang buah kelor sekitar 20–60 cm.|D
+Kelor tahan hidup pada suhu hingga 40°C.|D
+Seratus gram daun kelor segar mengandung ±9 g protein.|D
+Kelor mulai berbunga pada umur 6–12 bulan.|D`,
+["Kelor, Pohon Sejuta Manfaat","Kelor (Moringa oleifera) adalah tanaman pohon berdaun majemuk dari keluarga Moringaceae.","Daunnya kecil dan bulat telur, bunganya putih krem, buahnya panjang seperti polong. Tingginya 7–12 meter.","Daun kelor dimasak sebagai sayur bergizi yang kaya protein."]],
+["Lidah Buaya","🌵",`Daun lidah buaya tebal, berdaging, dan berduri di tepi.|F
+Daun lidah buaya mengandung gel bening yang licin.|F
+Lidah buaya menyimpan air di dalam daunnya.|F
+Tanaman ini tumbuh membentuk roset.|F
+Gel lidah buaya sering dioleskan pada kulit.|F
+Panjang daun lidah buaya sekitar 30–50 cm.|D
+Satu daun dewasa berbobot sekitar 0,5–1 kg.|D
+Lidah buaya dipanen mulai umur 8–12 bulan.|D
+Gel lidah buaya terdiri atas sekitar 99% air.|D
+Lidah buaya tumbuh baik pada suhu 20–30°C.|D`,
+["Lidah Buaya, Tanaman Penyimpan Air","Lidah buaya (Aloe vera) adalah tanaman sukulen dari keluarga Asphodelaceae.","Daunnya tebal, berdaging, berduri di tepi, dan berisi gel bening. Panjang daun 30–50 cm.","Gelnya dimanfaatkan untuk merawat kulit dan bahan minuman."]],
+["Kunyit","🥕",`Rimpang kunyit berwarna oranye tua.|F
+Kunyit meninggalkan noda kuning pada kain.|F
+Daun kunyit lebar dan berpelepah.|F
+Kunyit tumbuh subur di tanah gembur.|F
+Kunyit dipakai sebagai bumbu dan pewarna makanan.|F
+Tinggi tanaman kunyit sekitar 1 meter.|D
+Kunyit dipanen pada umur 8–12 bulan.|D
+Kunyit dapat tumbuh pada ketinggian 0–1.000 mdpl.|D
+Kandungan kurkumin kunyit sekitar 3–5%.|D
+Curah hujan ideal kunyit 2.000–4.000 mm per tahun.|D`,
+["Kunyit, Rimpang Berwarna Oranye","Kunyit (Curcuma longa) adalah tanaman rimpang dari keluarga Zingiberaceae.","Rimpangnya oranye tua, daunnya lebar berpelepah, dan tingginya sekitar 1 meter.","Kunyit dipakai sebagai bumbu, pewarna alami, dan bahan jamu."]],
+["Sereh","🌾",`Sereh berdaun panjang, tipis, dan tepinya tajam.|F
+Batang sereh berpelepah dan berumpun.|F
+Sereh beraroma segar seperti lemon.|F
+Sereh tumbuh berkelompok membentuk rumpun.|F
+Sereh sering dipakai sebagai penyedap masakan.|F
+Tinggi rumpun sereh dapat mencapai 1–1,5 meter.|D
+Sereh dapat dipanen setiap 3–4 bulan.|D
+Rendemen minyak sereh wangi sekitar 0,5–1%.|D
+Sereh tumbuh baik pada suhu 20–30°C.|D
+Satu rumpun sereh dapat memiliki 10–40 batang.|D`,
+["Sereh, Rumpun Wangi Dapur","Sereh (Cymbopogon citratus) adalah tanaman rumput berumpun dari keluarga Poaceae.","Daunnya panjang dan tepinya tajam, batangnya berpelepah, aromanya seperti lemon. Tinggi rumpun 1–1,5 meter.","Sereh dimanfaatkan sebagai penyedap masakan dan bahan minyak atsiri."]],
+["Binahong","🍃",`Daun binahong berbentuk jantung.|F
+Batang binahong merambat dan membelit.|F
+Umbi kecil muncul di ketiak daun binahong.|F
+Daun binahong bertekstur licin dan agak berlendir.|F
+Daun binahong sering dijadikan ramuan tradisional.|F
+Panjang daun binahong sekitar 5–10 cm.|D
+Batang binahong dapat merambat hingga 5 meter.|D
+Daun binahong dapat dipanen pada umur 3 bulan.|D
+Binahong tumbuh pada suhu 25–30°C.|D
+Jarak tanam binahong yang dianjurkan sekitar 50 cm.|D`,
+["Binahong, Tanaman Merambat Berdaun Hati","Binahong (Anredera cordifolia) adalah tanaman merambat dari keluarga Basellaceae.","Daunnya berbentuk jantung dan licin, batangnya membelit, dan ada umbi kecil di ketiak daun.","Daunnya dimanfaatkan sebagai ramuan tradisional."]],
+["Kumis Kucing","🌼",`Bunga kumis kucing memiliki benang sari panjang seperti kumis.|F
+Daun kumis kucing berbentuk bulat telur dan bergerigi.|F
+Batang kumis kucing berbentuk segi empat.|F
+Bunga kumis kucing berwarna putih atau ungu muda.|F
+Daun kumis kucing diseduh sebagai teh herbal.|F
+Tinggi tanaman kumis kucing 0,5–1,5 meter.|D
+Panjang benang sari sekitar 2–3 cm.|D
+Daun dipanen sebelum bunga mekar, umur ±3 bulan.|D
+Kumis kucing tumbuh pada suhu 20–30°C.|D
+Panjang daun kumis kucing sekitar 5–10 cm.|D`,
+["Kumis Kucing, Bunga Berbenang Panjang","Kumis kucing (Orthosiphon aristatus) adalah tanaman herba dari keluarga Lamiaceae.","Bunganya berbenang sari panjang, daunnya bergerigi, batangnya segi empat. Tinggi 0,5–1,5 meter.","Daunnya diseduh sebagai teh herbal."]]];
+const COL=["#ef4444","#f97316","#eab308","#22c55e","#06b6d4","#6366f1","#d946ef"];
+const SN=["Judul","Pernyataan / Klasifikasi Umum","Deskripsi Bagian","Deskripsi Manfaat / Simpulan"];
+const M=[["📖","Pengertian","Laporan Hasil Observasi (LHO) adalah teks yang memuat hasil pengamatan langsung terhadap suatu objek secara objektif, apa adanya, tanpa dibumbui pendapat pribadi."],["🔍","Karakteristik","LHO bersifat objektif, berdasarkan fakta dan data, disusun sistematis, serta memakai bahasa baku yang lugas."],["🧱","Struktur","Struktur LHO: satu, Judul. Dua, Pernyataan atau klasifikasi umum. Tiga, Deskripsi bagian. Empat, Deskripsi manfaat atau simpulan."],["✅","Fakta, Data, Opini","Fakta adalah kenyataan yang dapat diamati. Data adalah angka hasil pengukuran. Opini adalah pendapat pribadi. Informasi kredibel punya sumber jelas, bukti, dan dapat dicek ulang."]];
+const MC=["#16a34a","#ea580c","#0284c7","#9333ea"];
+const S={scr:"hero",m:null,me:{},own:false,sub:[],a:{}};
+const $=s=>document.getElementById(s);
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const btn=(f,t,c="")=>`<button class="btn ${c}" onclick="${f}">${t}</button>`;
+const say=(t,cb)=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="id-ID";if(cb)u.onend=cb;speechSynthesis.speak(u)}catch(e){cb&&cb()}};
+const stop=()=>{try{speechSynthesis.cancel()}catch(e){}};
+const go=s=>{stop();S.scr=s;if(s=="guru")sub();R();scrollTo(0,0)};
+for(let i=0;i<12;i++){const l=document.createElement("div");l.className="lf";l.textContent=["🍃","🌿","🍀","🌸"][i%4];l.style.cssText=`left:${i*8.5}%;animation-duration:${9+i%5*3}s;animation-delay:-${i*2}s`;document.body.appendChild(l)}
+const V={
+hero:()=>`<section class="c hero"><div class="big">🌳</div><h1>Mengungkap Fakta Alam Secara Objektif</h1><p style="font-size:19px">Petualangan seru belajar Laporan Hasil Observasi bersama tanaman bermanfaat! 🌱🌿🌼</p>${btn("go('tp')","🌱 Mulai Petualangan")}${S.own?btn("go('guru')","👩‍🏫 Panel Guru","b3"):""}</section>`,
+tp:()=>`<section class="c"><h2>🎯 Tujuan Pembelajaran</h2><div class="pn"><b>Murid mampu mengevaluasi akurasi data fakta dan kredibilitas informasi dari berbagai teks LHO (aural, visual, audiovisual) secara kritis dan berkesadaran.</b></div>
+<div class="tp"><b>ATP 1.1</b> Peserta didik mampu mengidentifikasi pengertian, karakteristik, serta struktur teks Laporan Hasil Observasi (LHO) dari berbagai sumber (teks tulis, audio, visual, dan audiovisual) secara tepat.</div>
+<div class="tp" style="border-color:#f97316"><b>ATP 1.2</b> Peserta didik mampu menyebutkan fakta, opini, serta ciri-ciri informasi yang kredibel dan tidak kredibel dalam berbagai teks LHO secara benar.</div>
+<div class="tp" style="border-color:#0ea5e9"><b>ATP 1.3</b> Peserta didik mampu menentukan keakuratan data fakta dan kredibilitas informasi dari berbagai teks LHO berdasarkan bukti yang ditemukan secara kritis.</div>
+${btn("go('hero')","⬅ Kembali","b3")}${btn("go('menu')","Lanjut ➡")}</section>`,
+menu:()=>{const st=[["🎧","AUDITORI","#ef4444"],["👀","VISUAL","#22c55e"],["🎬","AUDIOVISUAL","#0ea5e9"],["🤸","KINESTETIK","#f97316"]];
+return `<section class="c"><h2>📚 Pilih Gaya Belajarmu</h2><div class="grid">${st.map(x=>`<button class="sq ${S.m==x[1]?"on":""}" style="background:${x[2]}" onclick="pick('${x[1]}')"><i>${x[0]}</i>${x[1]}</button>`).join("")}</div>
+<div id="mt">${S.m?mat():"<p>👆 Ketuk salah satu kotak untuk membuka materi.</p>"}</div>${btn("go('tp')","⬅ Kembali","b3")}${btn("go('reg')","🎮 Ke Permainan ➡","b2")}</section>`},
+reg:()=>`<section class="c"><h2>📝 Data Petualang</h2><label>Nama Lengkap</label><input id="nm" value="${S.me.nama||""}" placeholder="Nama lengkap"><label>Kelas</label><input id="kl" value="${S.me.kelas||""}" placeholder="Contoh: X-3"><label>Kelompok</label><select id="kp">${[1,2,3,4,5,6,7].map(i=>`<option value="${i}" ${S.me.kel==i?"selected":""}>Kelompok ${i} (${P[i-1][0]})</option>`).join("")}</select><p id="er" style="color:#b91c1c"></p>${btn("go('menu')","⬅ Kembali","b3")}${btn("start()","🚀 Masuk Game")}</section>`,
+game:()=>{const g=S.g,p=P[S.me.kel-1];if(g.i>=10)return `<section class="c hero"><div class="big">🏆</div><h2>Game Selesai!</h2><h1>${g.sc}/10</h1><p>Hebat, ${S.me.nama}! Kamu sudah bisa membedakan FAKTA dan DATA.</p>${btn("go('env')","✉️ Lanjut ke Asesmen")}</section>`;
+const q=g.q[g.i];return `<section class="c"><b>${p[1]} Kelompok ${S.me.kel} · ${p[0]}</b> <small>Soal ${g.i+1}/10 · Skor ${g.sc}</small><div class="bar"><div style="width:${g.i*10}%"></div></div>
+<div class="q">${q[0]}</div>${g.fb?`<div class="fb ${g.fb[0]?"ok":"no"}">${g.fb[0]?"🎉 Benar!":"😅 Belum tepat."} ${q[1]=="F"?"Ini FAKTA: ciri atau kenyataan yang dapat diamati.":"Ini DATA: berisi angka hasil pengukuran."}</div>${btn("nx()","Lanjut ➡")}`:`<div class="two">${btn("ans('F')","🟢 FAKTA")}${btn("ans('D')","🟠 DATA","b2")}</div>`}</section>`},
+env:()=>{const a=S.a;if(!a.open)return `<section class="c"><h2>✉️ Amplop Digital Asesmen</h2><p>Buka amplop sesuai nomor kelompokmu (<b>Kelompok ${S.me.kel}</b>). Susun potongan teks LHO menjadi struktur yang benar!</p><div class="grid">${COL.map((c,i)=>`<button class="env" style="background:${c}" ${i+1!=S.me.kel?"disabled":""} onclick="openEnv()"><span>${i+1==S.me.kel?"💌":"🔒"}</span>Amplop ${i+1}</button>`).join("")}</div></section>`;
+const t=P[S.me.kel-1][3];return `<section class="c"><h2>🧩 Susun Struktur Teks LHO</h2><p>Ketuk potongan untuk menaruhnya ke urutan 1–4. Ketuk kotak urutan untuk mengembalikannya.</p>
+${a.pl.map((p,i)=>`<div class="slot ${a.wrong.includes(i)?"bad":""} ${a.done?"good":""}" onclick="take(${i})"><b>${i+1}.</b> ${p==null?"<small>(kosong)</small>":t[p]}${a.done?` <small>✔ ${SN[i]}</small>`:""}</div>`).join("")}
+<h3>📦 Potongan Amplop</h3>${a.pc.filter(p=>!a.pl.includes(p)).map(p=>`<div class="pc" onclick="put(${p})">${t[p]}</div>`).join("")||"<small>Semua potongan sudah dipakai.</small>"}
+${a.msg?`<div class="fb ${a.done?"ok":"no"}">${a.msg}</div>`:""}
+${a.done?"":`<div class="pn"><b>🃏 Kartu Bantuan</b><br>${[["Kartu Ciri","Lihat ciri tiap bagian"],["Kartu Periksa","Tandai urutan yang salah"],["Kartu Kunci","Betulkan satu urutan"]].map((h,i)=>`<button class="btn b3" style="font-size:14px" onclick="hint(${i+1})" ${a.hu[i]?"disabled":""}>${h[0]}<br><small>${h[1]}</small></button>`).join("")}</div>${btn("chk()","✅ Periksa Susunan")}`}
+${a.done?btn("go('done')","Selesai 🎉"):""}</section>`},
+done:()=>`<section class="c hero"><div class="big">🌟</div><h2>Hebat, ${S.me.nama}!</h2><p>Asesmenmu sudah ${S.saved?"terkumpul ke guru ✅":"tersimpan di perangkat ini (belum terkirim ke guru)"}.</p><p>Percobaan menyusun: ${S.a.tries+1} · Kartu bantuan dipakai: ${S.a.hu.filter(x=>x).length}</p>${btn("S.a={};S.m=null;go('hero')","🏠 Kembali ke Awal")}</section>`,
+guru:()=>`<section class="c"><h2>👩‍🏫 Panel Guru: Hasil Murid</h2><p>${S.own?"Masuk sebagai guru (pemilik halaman).":"Hanya pemilik halaman yang dapat melihat data."} Total: <b>${S.sub.length}</b> murid.</p><div class="sc"><table><tr><th>Nama</th><th>Kelas</th><th>Kel.</th><th>Game</th><th>Salah susun</th><th>Bantuan</th><th>Hasil</th></tr>${S.sub.sort((a,b)=>a.kel-b.kel).map(r=>`<tr><td>${esc(r.nama)}</td><td>${esc(r.kelas)}</td><td>${r.kel}</td><td>${r.game}/10</td><td>${r.tries}</td><td>${r.hints}</td><td>${r.ok?"✅ Benar":"—"}</td></tr>`).join("")}</table></div>${btn("go('hero')","⬅ Beranda","b3")}${btn("S.a={};S.m=null;go('menu')","Coba fitur siswa","b2")}</section>`};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function R(){$("app").innerHTML=V[S.scr]()}
+function pick(m){stop();S.m=m;R();$("mt").scrollIntoView({behavior:"smooth"})}
+function mat(){const m=S.m;
+if(m=="VISUAL")return `<div class="grid">${M.map((x,i)=>`<div class="vc" style="background:${MC[i]}"><i>${x[0]}</i><b>${x[1]}</b><br>${x[2].replace("satu, ","1. ").replace("Dua, ","2. ").replace("Tiga, ","3. ").replace("Empat, ","4. ")}</div>`).join("")}</div>`;
+if(m=="KINESTETIK")return `<p>🤸 Ketuk kartu untuk membaliknya!</p><div class="grid">${M.map(x=>`<div class="fl" onclick="this.classList.toggle('on')"><div><b>${x[0]} ${x[1]}</b><span>${x[2]}</span></div></div>`).join("")}</div>`;
+if(m=="AUDITORI")return `<div class="pn"><p>🎧 Pasang earphone lalu dengarkan penjelasan materinya.</p><div class="eq">${"<s></s>".repeat(9).replace(/<s>/g,(x,i)=>`<s style="animation-delay:-${Math.random().toFixed(2)}s">`)}</div>${btn("say(M.map(x=>x[1]+'. '+x[2]).join(' '))","▶ Putar")}${btn("stop()","⏹ Berhenti","b2")}</div>`;
+return `<div class="pn"><div id="av"><p>🎬 Tekan Putar untuk menonton dan mendengar materi.</p></div>${btn("av(0)","▶ Putar")}${btn("stop()","⏹ Berhenti","b2")}</div>`}
+function av(i){if(i>=M.length){$("av").innerHTML="<p>🎉 Selesai!</p>";return}const x=M[i];$("av").innerHTML=`<div class="vc" style="background:${MC[i]};animation:pop .5s"><i>${x[0]}</i><b>${x[1]}</b><br>${x[2]}</div>`;say(x[1]+". "+x[2],()=>setTimeout(()=>av(i+1),600))}
+function start(){const n=$("nm").value.trim(),k=$("kl").value.trim();if(!n||!k){$("er").textContent="Isi nama lengkap dan kelas dulu ya 🙂";return}
+S.me={nama:n,kelas:k,kel:+$("kp").value};S.g={q:sh(P[S.me.kel-1][2].split("\n").map(l=>l.split("|"))),i:0,sc:0,fb:null};S.a={};go("game")}
+function ans(k){const g=S.g,ok=g.q[g.i][1]==k;if(ok)g.sc++;g.fb=[ok];R()}
+function nx(){S.g.i++;S.g.fb=null;R()}
+function openEnv(){S.a={open:true,pc:sh([0,1,2,3]),pl:[null,null,null,null],tries:0,hu:[0,0,0],wrong:[],msg:"",done:false};R()}
+function put(p){const a=S.a,i=a.pl.indexOf(null);if(i<0)return;a.pl[i]=p;a.wrong=[];R()}
+function take(i){if(S.a.done)return;S.a.pl[i]=null;S.a.wrong=[];R()}
+function bad(){return S.a.pl.map((p,i)=>p!==i?i:-1).filter(i=>i>=0)}
+function chk(){const a=S.a;if(a.pl.includes(null)){a.msg="Isi semua urutan dulu ya 📦";R();return}const b=bad();if(!b.length){a.done=true;a.wrong=[];a.msg="🎉 Luar biasa! Susunan LHO-mu sudah benar!";save();R();return}a.tries++;a.wrong=[];a.msg="Susunan belum tepat 🤔 Coba pakai Kartu Bantuan!";R()}
+function hint(n){const a=S.a;a.hu[n-1]=1;const b=bad();
+if(n==1)a.msg="🃏 Urutan LHO: 1) Judul (nama objek) → 2) Pernyataan/klasifikasi umum (apa & jenis objek) → 3) Deskripsi bagian (ciri, bentuk, ukuran) → 4) Deskripsi manfaat/simpulan (kegunaan).";
+if(n==2){a.wrong=b;a.msg=b.length?"🃏 Urutan yang belum tepat: "+b.map(i=>i+1).join(", ")+".":"Semua sudah benar! Tekan Periksa."}
+if(n==3){if(a.pl.includes(null)||!b.length){a.msg="Isi semua urutan dulu agar kartu ini bisa dipakai.";a.hu[2]=0}else{const i=b[0],f=a.pl.indexOf(i);a.pl[f]=a.pl[i];a.pl[i]=i;a.msg=`🃏 Urutan ${i+1} sudah dibetulkan: ${SN[i]}.`}}
+R()}
+async function save(){const a=S.a,r={nama:S.me.nama,kelas:S.me.kelas,kel:S.me.kel,game:S.g.sc,tries:a.tries,hints:a.hu.filter(x=>x).length,ok:1,ts:Date.now()};
+try{localStorage.setItem("lho",JSON.stringify(r))}catch(e){}
+try{if(S.db){await S.db.collection("submissions").doc((S.uid||"u")+"_"+Date.now()).set(r);S.saved=true}}catch(e){}}
+let sb=0;function sub(){if(sb||!S.db||!S.own)return;sb=1;S.db.collection("submissions").onSnapshot(s=>{S.sub=s.docs.map(d=>d.data());if(S.scr=="guru")R()},()=>{})}
+R();
+(async()=>{try{const u=await claude.use("user");S.own=u?await u.isOwner():false;S.uid=u?await u.id():null;S.db=await claude.use("db");R()}catch(e){}})();
+</script></body></html>
